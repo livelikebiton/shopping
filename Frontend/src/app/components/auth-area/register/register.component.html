@@ -1,0 +1,54 @@
+<div>
+    <form #registerForm (submit)="register()">
+        
+        <div class="register" *ngIf="step==1; else step2">
+            <h1>הרשמה</h1>
+            <label>תעודת זהות</label>
+            <input #identityCardBox="ngModel" type="number" name="identityCard" [(ngModel)]="user.identityCard" required>
+            <span *ngIf="identityCardBox.errors?.required && identityCardBox.touched">חסר תעודת זהות</span>
+
+            <label>אימייל</label>
+            <input #emailBox="ngModel" type="email" name="email" [(ngModel)]="user.email" required>
+            <span *ngIf="emailBox.errors?.required && emailBox.touched">חסר אימייל</span>
+
+            
+            <label>סיסמא</label>
+            <input #passwordBox="ngModel" type="password" name="password" [(ngModel)]="user.password" required>
+            <span *ngIf="passwordBox.errors?.required && passwordBox.touched">חסר סיסמא</span>
+
+            <label>אימות סיסמא</label>
+            <input #confirmPasswordBox="ngModel" type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword" required>
+            <span *ngIf="confirmPasswordBox.errors?.required && confirmPasswordBox.touched">חסר אימות סיסמא</span>
+
+            <button (click)="nextStep()">המשך</button>
+            <button><a routerLink="/home">משתמש רשום</a></button>
+        </div>
+        
+        <ng-template #step2>
+            <div class="register">
+                <h2>הרשמה</h2>
+                <label>בחר עיר</label>
+                <select #cityBox="ngModel" [(ngModel)]="user.cityId" name="cityId" required>
+                    <option selected disabled>בחר עיר</option>
+                    <option *ngFor="let c of cities" value={{c._id}}>{{c.city}}</option>
+                </select>
+                <span *ngIf="cityBox.errors?.required && cityBox.touched">חסר עיר</span>
+
+                <label>רחוב</label>
+                <input #streetBox="ngModel" type="text" name="street" [(ngModel)]="user.street" required>
+                <span *ngIf="cityBox.errors?.required && cityBox.touched">חסר רחוב</span>
+
+                <label>שם פרטי</label>
+                <input #firstNameBox="ngModel" type="text" name="firstName" [(ngModel)]="user.firstName">
+                <span *ngIf="cityBox.errors?.required && cityBox.touched">חסר שם פרטי</span>
+
+                <label>שם משפחה</label>
+                <input #lastNameBox="ngModel" type="text" name="lastName" [(ngModel)]="user.lastName" required>
+                <span *ngIf="cityBox.errors?.required && cityBox.touched">חסר שם משפחה</span>
+                
+                <button>הרשמה</button>
+            </div>
+        </ng-template>
+        
+    </form>
+</div>

@@ -1,0 +1,7 @@
+.authMenu {
+    float: left;
+    position: absolute;
+    top: 10px;
+    margin-right: 10px;
+    width: 30%;
+}

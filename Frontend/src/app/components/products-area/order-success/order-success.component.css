@@ -1,0 +1,25 @@
+div {
+    border-radius: 20px;
+    font-family: Calibri;
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    border-radius: 20px;
+    padding: 2%;
+    font-family: Calibri;
+    font-size: x-large;
+    border: none;
+    background-color: indianred;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

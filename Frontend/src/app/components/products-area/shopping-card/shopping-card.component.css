@@ -1,0 +1,41 @@
+tbody {
+    font-size: medium;
+}
+.shoppingCard{
+    margin: 0 3px;
+    height: 28vh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: transparent;
+    border: transparent;
+}
+
+.payment {
+    padding: 5%;
+    font-size: large;
+    height: 10px;
+    position: sticky;
+    bottom: 5px;
+}
+
+h1 {
+    margin: 0;
+    text-align: right;
+}
+
+a {
+    font-weight: bold;
+}
+
+.order {
+    float: left;
+}
+
+::-webkit-scrollbar  {
+    color: transparent;
+    background-color: transparent;
+}

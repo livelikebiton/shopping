@@ -1,0 +1,48 @@
+.register {
+    margin: auto;
+    padding: 10px;
+    background-color: indianred;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px white;
+}
+
+h1 {
+    padding: 0;
+    margin: 1px;
+    font-size: xx-large;
+}
+
+a {
+    margin: 0;
+    text-decoration: none;
+    font-size: large;
+    font-family: Calibri;
+}
+
+input, label, select {
+	width: 100%;
+    box-sizing: border-box;
+    font-size: large;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: transparent;
+    padding: 2%;
+}
+
+button {
+    border-radius: 20px;
+    margin: 5px;
+    border: transparent;
+    padding: 2%;
+    width: 40%;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+span {
+    position: absolute;
+    margin: 0 10px;
+    color: red;
+    font-size: medium;
+}

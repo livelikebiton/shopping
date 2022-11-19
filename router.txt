@@ -1,0 +1,38 @@
+auth -
+register [POST] - https://localhost:3001/api/auth/register
+login [POST] - https://localhost:3001/api/auth/login
+
+users -
+get all user [GET] - https://localhost:3001/api/users
+get one user [GET] - https://localhost:3001/api/users/:_id
+
+cities -
+get all cities [GET] - https://localhost:3001/api/cities
+
+products-
+get all categories [GET] - https://localhost:3001/api/products/categories
+get all products [GET] - https://localhost:3001/api/products
+get products by category [GET] - https://localhost:3001/api/products/by-category/:categoryId
+get one product [GET] - https://localhost:3001/api/products/:_id
+add product [POST] - https://localhost:3001/api/products
+update product [PUT] - https://localhost:3001/api/products/:_id
+count products [GET] - https://localhost:3001/api/products/count
+search products [GET] - https://localhost:3001/api/products/search/:textToSearch
+
+cards-
+open card [POST] - https://localhost:3001/api/cards/
+get last card [GET] - https://localhost:3001/api/cards/by-date/:userId
+get one card [GET] - https://localhost:3001/api/cards/:_id
+get all card by user [GET] - https://localhost:3001/api/cards/by-user/:userId
+
+card Products-
+get one card with all products [GET] - https://localhost:3001/api/cards-products/:cardId
+get one product card [GET] - https://localhost:3001/api/cards-products/:_id
+add product card [POST] - https://localhost:3001/api/cards-products
+delete one product card [DELETE] - https://localhost:3001/api/cards-products/:_id
+
+order-
+get all user order [GET] - https://localhost:3001/api/orders/:userId
+get user last order [GET] - https://localhost:3001/api/orders/by-user/:userId
+count orders [GET] - https://localhost:3001/api/orders/count
+create new order [GET] - https://localhost:3001/api/orders/

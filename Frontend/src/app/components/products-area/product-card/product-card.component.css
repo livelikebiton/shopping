@@ -1,0 +1,59 @@
+.productCard {
+    width: 20%;
+    margin: 4%;
+    background-color: indianred;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.add {
+    background-color: transparent;
+    border: transparent;
+    font-size: xx-large;
+    position: relative;
+    left: 1%;
+}
+
+.addAmount {
+    border: transparent;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+h1 {
+    font-size: large;
+}
+
+h3 {
+    font-size: medium;
+    padding: 0;
+    margin: 0;
+    font-weight: lighter;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    margin: 2%;
+}
+
+input {
+    border-radius: 20px;
+    border: transparent;
+    padding: 5px;
+    margin: 2%;
+    width: 30%;
+}
+
+.edit {
+    border-radius: 20px;
+    padding: 8%;
+    border: transparent;
+    background-color: burlywood;
+    margin: 3%;
+    font-family: Calibri;
+    font-size: large;
+    font-weight: lighter;
+}

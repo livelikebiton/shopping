@@ -1,0 +1,30 @@
+<div class="login">
+    
+    <ng-container *ngIf="user">
+        <div class="shopping" *ngIf="user.isAdmin" >
+            <span><a routerLink="/admin-products">לך לדף מנהל</a></span>
+        </div>
+        <div class="shopping" *ngIf="!user.isAdmin" [ngSwitch]="check">
+            <span *ngSwitchDefault><a (click)="openCard()">התחל רכישה</a></span>
+            <span *ngSwitchCase="2"><a routerLink="/products">תמשיך את הרכישה שלך</a></span>
+            <span *ngSwitchCase="3"><a (click)="openCard()">התחל רכישה נוספת</a></span>
+        </div>
+    </ng-container>
+    
+    <ng-container *ngIf="!user">
+        <h1>התחברות</h1>
+        <form (submit)="login()">
+            <label>אימייל: </label>
+            <input #emailBox="ngModel" type="text" name="email" [(ngModel)]="credentials.email">
+            <span *ngIf="emailBox.errors?.required && emailBox.touched">חסר אימייל</span>
+
+            <label>סיסמא: </label>
+            <input #passwordBox="ngModel" type="password" name="password" [(ngModel)]="credentials.password">
+            <span *ngIf="passwordBox.errors?.required && passwordBox.touched">חסר סיסמא</span>
+
+
+            <a routerLink="/register">להירשם לאתר</a>
+            <button>התחברות</button>
+        </form>
+    </ng-container>
+</div>

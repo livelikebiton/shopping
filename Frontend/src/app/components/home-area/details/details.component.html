@@ -1,0 +1,29 @@
+<div class="details">
+
+    <div class="available">
+        יש לנו {{products}} מוצרים זמינים כרגע באתר לרכישה.
+    </div>
+
+    <div class="allTheOrders">
+       {{orders}} ההזמנות מהאתר
+    </div>
+
+    <ng-container *ngIf="user">
+        <div class="loginUser" [ngSwitch]="check">
+            <span class="startShoping" *ngSwitchCase="1">
+                ברוך הבא לאתר הקניות הגדול בעולם {{user.firstName}} {{user.lastName}}.
+            </span>
+            <span class="continueShopping" *ngSwitchCase="2">
+                ההזמנה האחרונה שלך מתאריך
+                {{order.orderDate.toString().substring(0,10)}} {{order.orderDate.toString().substring(11,19)}}
+            </span>
+            <span class="newShopping" *ngSwitchCase="3">
+                <span *ngIf="!user.isAdmin">
+                    יש לך עגלה פתוחה מתאריך
+                    {{card.createDate.toString().substring(0,10)}} {{card.createDate.toString().substring(11,19)}} 
+                </span>
+            </span>
+        </div>
+    </ng-container>
+
+</div>

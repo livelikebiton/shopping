@@ -1,0 +1,33 @@
+<div>
+    <h1>הזמנה</h1>
+    <hr>
+    <form #orderForm="ngForm" (submit)="createOrder(orderForm)">
+        <h2>פרטי משלוח</h2>
+
+        <label>בחר עיר</label>
+        <select #cityBox="ngModel" [(ngModel)]="order.cityId" name="cityId" (dblclick)="order.cityId=user.cityId" required>
+            <option selected disabled>בחר עיר</option>
+            <option *ngFor="let c of cities" value={{c._id}}>{{c.city}}</option>
+        </select>
+        <span *ngIf="cityBox.errors?.required && cityBox.touched">חסר עיר</span>
+
+        <label>רחוב</label>
+        <input #streetBox="ngModel" type="text" name="street" [(ngModel)]="order.street" (dblclick)="order.street=user.street" required>
+        <span *ngIf="cityBox.errors?.required && cityBox.touched">חסר רחוב</span>
+
+        <label>תאריך משלוח</label>
+        <input #deliveryDateBox="ngModel" type="date" name="deliveryDate" [(ngModel)]="order.deliveryDate" required>
+        <span *ngIf="deliveryDateBox.errors?.required && deliveryDateBox.touched">חסר תאריך משלוח</span>
+
+
+        <h2>אמצעי תשלוח</h2>
+
+        <label>כרטיס אשראי</label>
+        <input #creditCardBox="ngModel" type="number" name="creditCard" [(ngModel)]="order.creditCard" required pattern="[0-9]{16}">
+        <span *ngIf="creditCardBox.errors?.required && creditCardBox.touched">חסר אמצעי תשלום</span>
+        <span *ngIf="creditCardBox.errors?.pattern && creditCardBox.invalid">יש להזין 16 ספרות</span>
+
+        <button>לביצוע הזמנה</button>
+
+    </form>
+</div>

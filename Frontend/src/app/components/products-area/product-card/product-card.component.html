@@ -1,0 +1,21 @@
+<div class="productCard">
+    <div>
+        <h3>{{product.category.name}}</h3>
+        <img *ngIf="!product.imageName" [src]="imageUrl + product.image || product.imageName" />
+        <h1>{{product.name}}</h1>
+        <p>
+            Price: {{product.price}} <br> 
+        </p>
+        <ng-container *ngIf="!isAdmin">
+            <button class="add" (click)="show=true">+</button>
+            <div *ngIf="show">
+                <input [(ngModel)]="amount" id="amount" type="number" required>
+                <button class="addAmount" (click)="addProductToCard()">ADD</button>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="isAdmin">
+            <button (click)="editProduct()" class="edit">Edit</button>
+        </ng-container>
+
+    </div>
+</div>

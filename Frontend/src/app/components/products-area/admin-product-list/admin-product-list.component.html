@@ -1,0 +1,42 @@
+<div class="contact">
+    <div class="productsDisplay">
+        <button class="allCategories" (click)="getAllProducts()">כל המוצרים</button>
+        <nav *ngFor="let c of categories" (click)="getProducts(c._id)">
+            <button>{{c.name}}</button>
+        </nav>
+
+        <div *ngIf="products" class="products">
+            <app-product-card *ngFor="let p of products" [product]="p" [isAdmin]="true"
+                (_onEditProduct)="onEditProduct($event)"></app-product-card>
+        </div>
+    </div>
+
+    <div class="edit">
+        <button (click)="addNewProduct()">+</button>
+        <div *ngIf="product">
+            <form #productForm (submit)="saveProduct()">
+
+                <label>שם המוצר</label>
+                <input #nameBox="ngModel" type="text" name="name" [(ngModel)]="product.name" required>
+                <span *ngIf="nameBox.errors?.required && nameBox.touched">חסר שם</span>
+
+                <label>בחר קטגוריה</label>
+                <select #categoryBox="ngModel" name="categoryId" [(ngModel)]="product.categoryId" required>
+                    <option selected disabled>בחר קטגוריה</option>
+                    <option *ngFor="let c of categories" value={{c._id}}>{{c.name}}</option>
+                </select>
+                <span *ngIf="categoryBox.errors?.required && categoryBox.touched">חסר קטגוריה</span>
+
+                <label>מחיר המוצר</label>
+                <input #priceBox="ngModel" type="number" name="price" [(ngModel)]="product.price" required>
+                <span *ngIf="priceBox.errors?.required && priceBox.touched">חסר מחיר מוצר</span>
+                
+                <label>תמונת המוצר</label>
+                <input type="file" accept="image/*" (change)="saveImage($event)" (blur)="imageBlur()" required>
+                <!-- <span *ngIf="imageBox.errors?.required && imageBox.touched">חסר מחיר מוצר</span> -->
+
+                <button>שמור מוצר</button>
+            </form>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,20 @@
+<div>
+    <ng-container *ngIf="!user">
+        <span>שלום אורח , </span>
+        <a routerLink="/home">התחברות</a>
+        <span> | </span>
+        <a routerLink="/register">הרשמה</a>
+    </ng-container>
+
+    <ng-container *ngIf="user">
+        <span>שלום {{user.firstName}} {{user.lastName}}</span>
+        <span> | </span>
+        <a routerLink="/logout">התנתקות</a>
+    </ng-container>
+</div>
+
+<div class="contactUs">
+    ליצירת קשר עם החנות: <br>
+    אימייל: maayanbiton@icloud.com <br>
+    טלפון: 0507189893
+</div>

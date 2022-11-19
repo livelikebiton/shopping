@@ -1,0 +1,33 @@
+<div class="card">
+    <button (click)="deleteAllProductsInCard(cardProduct.cardId)">clear</button>
+    <h1>העגלה של {{user.firstName}} {{user.lastName}}</h1>
+    <hr>
+    <div class="shoppingCard" *ngIf="cardProducts.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>amount</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let c of cardProducts">
+                <tr>
+                    <td>{{c.amount}} </td>
+                    <td class="name">{{c.product.name}} </td>
+                    <td>{{c.amount * c.product.price}}</td>
+                    <td *ngIf="!isInPayment"><button (click)="deleteOneProduct(c._id)">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="payment">
+        <hr>
+        לתשלום: {{getTotalPrice().toFixed(2)}}
+        <a class="order" *ngIf="!isInPayment" (click)="toPayment()">להזמנה</a>
+        <a class="order" *ngIf="isInPayment" (click)="backToCard()">חזרה לעגלה</a>
+
+    </div>
+
+</div>

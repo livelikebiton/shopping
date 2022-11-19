@@ -1,0 +1,9 @@
+html, body {
+    font-size: large;
+    font-family: Calibri;
+    direction: rtl;
+}
+
+a {
+    color: black;
+}

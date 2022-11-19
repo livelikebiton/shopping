@@ -1,0 +1,59 @@
+.login {
+    margin: auto;
+    padding: 5px;
+    background-color: indianred;
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px white;
+}
+
+.shopping {
+    text-align: center;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 200px;
+}
+
+.shopping > span {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+span > a {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: xx-large;
+}
+
+a {
+    font-size: medium;
+    margin: 0;
+}
+
+input, button, label, select {
+	width: 100%;
+    box-sizing: border-box;
+    font-size: large;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: transparent;
+    padding: 2%;
+}
+
+span {
+    position: absolute;
+    margin: 0 5px;
+    color: red;
+    font-size: medium;
+}

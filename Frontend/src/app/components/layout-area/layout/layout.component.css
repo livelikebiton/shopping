@@ -1,0 +1,23 @@
+div {
+    background-color: darksalmon;
+    border: pink dashed 3px;
+    border-radius: 20px;
+    margin: 2px;
+    height: 95vh;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 12% 8% 75% 5%;
+}
+
+header, footer {
+    grid-column: span 6;
+}
+
+nav {
+    grid-column: span 6;
+}
+
+main {
+    grid-column: span 6;
+}

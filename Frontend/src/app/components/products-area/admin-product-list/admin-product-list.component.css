@@ -1,0 +1,67 @@
+.content {
+    height: 70vh;
+    overflow-y: scroll;
+    justify-content: center;
+    margin: 2%;    
+    width:90%
+}
+
+nav {
+    display: inline-flex;
+}
+
+
+button {
+    border-radius: 15px;
+    background-color: indianred;
+    margin: 0 5px;
+    font-weight: bold;
+    font-family: Calibri;
+    font-size: medium;
+    border: transparent;
+    padding: 5px;
+    margin-top: 0px;
+}
+
+.productsDisplay {
+    width: 55%;
+    height: 70vh;
+    overflow-y: scroll;
+    justify-content: center;
+    margin: 2%;
+    float: right;
+}
+
+.edit {
+    width: 30%;
+    height: 75%;
+    overflow-y: scroll;
+    border-radius: 20px;
+    background-color: indianred;
+    float: left;
+    padding: 2%;
+    margin-left: 2%;
+    justify-content: center;
+}
+
+input, label, select,form > button {
+	width: 100%;
+    box-sizing: border-box;
+    font-size: large;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: transparent;
+    padding: 2%;
+}
+
+span {
+    position: absolute;
+    margin: 0 10px;
+    color: red;
+    font-size: medium;
+}
+
+::-webkit-scrollbar  {
+    color: transparent;
+    background-color: transparent;
+}

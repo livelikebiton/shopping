@@ -1,0 +1,15 @@
+<div>
+    <nav *ngIf="user">
+        <ng-container *ngIf="!user.isAdmin">
+            <span><a routerLink="/home">דף הבית</a></span>
+            <span> | </span>
+            <span><a routerLink="/products">המוצרים</a></span>
+        </ng-container>
+        
+        <ng-container *ngIf="user.isAdmin">
+            <span><a routerLink="/home">דף הבית</a></span>
+            <span> | </span>
+            <span><a routerLink="/admin-products">המוצרים</a></span>
+        </ng-container>
+    </nav>
+</div>

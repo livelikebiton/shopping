@@ -1,0 +1,14 @@
+div {
+    margin: auto;
+    padding: 10px;
+    background-color: indianred;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px white;
+}
+
+img {
+    height: 100px;
+    float: left;
+    margin: 1%;
+    border-radius: 20px;
+}

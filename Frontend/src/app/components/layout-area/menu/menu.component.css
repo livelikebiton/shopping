@@ -1,0 +1,10 @@
+div {
+    background-color: white;
+    border-radius: 20px;
+    display: inline-flex;
+    padding: 5px;
+}
+
+span {
+    margin-right: 10px;
+}

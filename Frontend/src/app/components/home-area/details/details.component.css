@@ -1,0 +1,11 @@
+.details {
+    margin: auto;
+    padding: 10px;
+    background-color: indianred;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px white;
+}
+
+div , div > .details {
+    margin: 2%;
+}

@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+}
+
+.info , .details {
+    width: 65%;
+    margin: 2%;
+}
+
+.loginBox {
+    float: left;
+    margin-left: 5%;
+}

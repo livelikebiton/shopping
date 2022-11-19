@@ -1,0 +1,8 @@
+.contactUs {
+    margin: 3%;
+    background-color: indianred;
+    border-radius: 20px;
+    padding: 2%;
+    float: right;
+    box-shadow: 5px 5px 10px white;
+}

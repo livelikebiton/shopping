@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="search">
+
+        <input type="text" [(ngModel)]="textToSearch" placeholder="Search" />
+
+        <button (click)="search()">search</button>
+        <button (click)="clear()">Clear</button>
+
+    </div>
+    <div class="productCard">
+        <ng-container *ngIf="toOrder; else payment">
+            <button *ngIf="!searching" (click)="getAllProducts()">כל המוצרים</button>
+            <nav *ngIf="!searching" (click)="getProducts($event)">
+                <button *ngFor="let c of categories" value="{{c._id}}">{{c.name}}</button>
+            </nav>
+
+            <div *ngIf="products">
+                <app-product-card *ngFor="let p of products" [product]="p" [cardId]="card._id"
+                    (_onAddProduct)="onAddProduct($event)" [isAdmin]="false"></app-product-card>
+            </div>
+        </ng-container>
+
+        <ng-template #payment>
+            <div class="order">
+                <app-order [cardId]="card._id" [totalPrice]="totalPrice"></app-order>
+            </div>
+        </ng-template>
+    </div>
+    <div class="card">
+        <app-shopping-card [cardProducts]="cardProducts" [user]="user" (_payment)="toPayment($event)" (_back)="backToOrder()"></app-shopping-card>
+    </div>
+</div>
